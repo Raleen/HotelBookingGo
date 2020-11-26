@@ -1,0 +1,2 @@
+# HotelsTask
+ School assignment
