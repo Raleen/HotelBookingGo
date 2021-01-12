@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="10dp"
-    android:paddingBottom="10dp">
-
+    android:paddingBottom="10dp"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="4dp"
+        android:layout_height="60dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp">
+    <ImageView
+        android:id="@+id/hotelImageViewId"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/hotelName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"
+        android:layout_toEndOf="@+id/hotelImageViewId"
+        android:layout_toRightOf="@+id/hotelImageViewId"/>
 
     <TextView
         android:id="@+id/hotelPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
-
-    <ImageButton
-        android:id="@+id/hotelInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#00FFFFFF"
-        android:tint="#106ED5"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
+        android:text="TextView"
+        android:layout_toEndOf="@+id/hotelName"
+        android:layout_toRightOf="@+id/hotelName"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

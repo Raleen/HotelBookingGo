@@ -19,6 +19,7 @@
         android:text="Login"
         android:textColor="#201F1F"
         app:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/registerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,11 +27,14 @@
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="368dp"
         android:text="Register"
         android:textColor="#201F1F"
         app:backgroundTint="#00FFFFFF"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="367dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

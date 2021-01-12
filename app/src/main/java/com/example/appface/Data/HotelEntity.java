@@ -1,10 +1,18 @@
 package com.example.appface.Data;
 
-public class HotelEntity {
+import android.net.Uri;
 
-    public String hotelImageOne;//url to the real image inside of a folder on the server
+import java.io.Serializable;
+
+public class HotelEntity implements Serializable {
+
+    public int hotelImageOne;//url to the real image inside of a folder on the server
     public String hotelName;
     public String hotelValue;
+
+    private void setHotelImageOne(int hotelImageOne) {
+        this.hotelImageOne = hotelImageOne;
+    }
 
     public String getHotelName() {
         return hotelName;
@@ -22,4 +30,10 @@ public class HotelEntity {
         this.hotelValue = hotelValue;
     }
 
+    public int getHotelImageOne()
+    {
+        return hotelImageOne;
+    }
+
+    public void setHotelImage(int hotelImage) { this.hotelImageOne = hotelImage; }
 }
