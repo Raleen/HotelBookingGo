@@ -24,6 +24,8 @@ public class HotelsActivity extends AppCompatActivity {
 
         String[] hotelPrices = {"100 Php", "200 Php", "350 Php", "500 Php"};
 
+        int[] availableRoomsCount = {5, 2, 3, 1};
+
         ArrayList<HotelEntity> hotels = new ArrayList<>();
 
         RecyclerView recViewHotels = (RecyclerView)findViewById(R.id.hotelsRecyclerViewId);
@@ -32,6 +34,8 @@ public class HotelsActivity extends AppCompatActivity {
             hotel.setHotelImage(hotelImages[i]);
             hotel.setHotelName(hotelNames[i]);
             hotel.setHotelValue(hotelPrices[i]);
+            hotel.setHotelRoomsCount(availableRoomsCount[i]);
+            hotel.setAvailable(true);
             hotels.add(hotel);
         }
         HotelsAdapter hotelsAdapter = new HotelsAdapter(hotels);

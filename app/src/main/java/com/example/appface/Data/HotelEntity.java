@@ -9,6 +9,9 @@ public class HotelEntity implements Serializable {
     public int hotelImageOne;//url to the real image inside of a folder on the server
     public String hotelName;
     public String hotelValue;
+    public int hotelRoomsCount;
+    public boolean isAvailable;
+
 
     private void setHotelImageOne(int hotelImageOne) {
         this.hotelImageOne = hotelImageOne;
@@ -36,4 +39,21 @@ public class HotelEntity implements Serializable {
     }
 
     public void setHotelImage(int hotelImage) { this.hotelImageOne = hotelImage; }
+
+    public int getHotelRoomsCount() {
+        return hotelRoomsCount;
+    }
+
+    public void setHotelRoomsCount(int hotelRoomsCount) {
+        this.hotelRoomsCount = hotelRoomsCount;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+    
 }
