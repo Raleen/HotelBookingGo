@@ -6,12 +6,22 @@ import java.io.Serializable;
 
 public class HotelEntity implements Serializable {
 
+
+
+    public int hotelId;
     public int hotelImageOne;//url to the real image inside of a folder on the server
     public String hotelName;
     public String hotelValue;
     public int hotelRoomsCount;
-    public boolean isAvailable;
+    public int isAvailable;
 
+    public int getHotelId() {
+        return hotelId;
+    }
+
+    public void setHotelId(int hotelId) {
+        this.hotelId = hotelId;
+    }
 
     private void setHotelImageOne(int hotelImageOne) {
         this.hotelImageOne = hotelImageOne;
@@ -48,12 +58,12 @@ public class HotelEntity implements Serializable {
         this.hotelRoomsCount = hotelRoomsCount;
     }
 
-    public boolean isAvailable() {
+    public int getIsAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setIsAvailable(int isAvailable) {
+        this.isAvailable = isAvailable;
     }
     
 }
