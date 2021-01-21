@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         int[] availableRoomsCount = {5, 2, 3, 1};
 
         //getBaseContext().deleteDatabase("HotelDatabase.db");
-        /*
-        database.beginTransaction();
+
+        /*database.beginTransaction();
         for(int i = 0; i < hotelNames.length; i++)
         {
             ContentValues hotelEntities = new ContentValues();
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
             database.insert(HotelTable.HotelTableInner.TABLE_NAME, null, hotelEntities);
         }
         database.setTransactionSuccessful();
-        database.endTransaction();
-        */
+        database.endTransaction();*/
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
