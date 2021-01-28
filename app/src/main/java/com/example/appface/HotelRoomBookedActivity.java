@@ -33,8 +33,6 @@ public class HotelRoomBookedActivity extends AppCompatActivity {
 
         HotelEntity receivedBookedHotel = (HotelEntity)getIntent().getSerializableExtra("bookedHotelEntity");
         String numberOfRoomsBooked = getIntent().getStringExtra("bookedRooms");
-        System.out.println("here");
-        System.out.println(numberOfRoomsBooked);
         hotelBookedImage.setImageResource(receivedBookedHotel.getHotelImageOne());
         hotelNameBooked.setText(receivedBookedHotel.getHotelName());
         hotelPriceBooked.setText(receivedBookedHotel.getHotelValue());

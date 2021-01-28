@@ -1,9 +1,12 @@
 package com.example.appface.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.ContactsContract;
+
+import com.example.appface.R;
 
 public class DatabaseHelperClass extends SQLiteOpenHelper {
 
@@ -18,6 +21,7 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
             HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_NAME + " TEXT, " +
             HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_PRICE + " TEXT, " +
             HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_ROOMS + " INTEGER, " +
+            HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_DESC + " TEXT, " +
             HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_AVAILABILITY + " INTEGER)";
 
     private static final String SQL_DROP_HOTEL_ENTRY ="DROP TABLE IF EXISTS " + HotelTable.HotelTableInner.TABLE_NAME;
@@ -29,7 +33,31 @@ public class DatabaseHelperClass extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        int[] hotelImages = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4};
+
+        String[] hotelNames = {"Hotel Luneta", "Hotel Manila Manor", "Hotel The Heritage", "Hotel H2O"};
+
+        String[] hotelPrices = {"100 Php", "200 Php", "350 Php", "500 Php"};
+
+        String[] hotelDesc = {"This hotel is located on ten minutes from the center of the city.", "Big rooms, incredible comfort. Good service.", "Nice view looking at the center of the city. Really luxorious hotel.", "Comfortable rooms, big pool and really good service."};
+
+        int[] availableRoomsCount = {5, 2, 3, 1};
         db.execSQL(SQL_CREATE_HOTEL_ENTRY);
+        db.beginTransaction();
+        for(int i = 0; i < hotelNames.length; i++)
+        {
+            ContentValues hotelEntities = new ContentValues();
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_IMAGE, hotelImages[i]);
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_NAME, hotelNames[i]);
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_PRICE, hotelPrices[i]);
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_ROOMS, availableRoomsCount[i]);
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_DESC, hotelDesc[i]);
+            hotelEntities.put(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_AVAILABILITY, 1);
+            db.insert(HotelTable.HotelTableInner.TABLE_NAME, null, hotelEntities);
+            System.out.println(hotelDesc[i]);
+        }
+        db.setTransactionSuccessful();
+        db.endTransaction();
     }
 
     @Override

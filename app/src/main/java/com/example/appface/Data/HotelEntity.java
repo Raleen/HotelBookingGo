@@ -1,7 +1,5 @@
 package com.example.appface.Data;
 
-import android.net.Uri;
-
 import java.io.Serializable;
 
 public class HotelEntity implements Serializable {
@@ -12,6 +10,7 @@ public class HotelEntity implements Serializable {
     public int hotelImageOne;//url to the real image inside of a folder on the server
     public String hotelName;
     public String hotelValue;
+    public String hotelDescription;
     public int hotelRoomsCount;
     public int isAvailable;
 
@@ -43,6 +42,14 @@ public class HotelEntity implements Serializable {
         this.hotelValue = hotelValue;
     }
 
+    public String getHotelDescription() {
+        return hotelDescription;
+    }
+
+    public void setHotelDescription(String hotelDescription) {
+        this.hotelDescription = hotelDescription;
+    }
+
     public int getHotelImageOne()
     {
         return hotelImageOne;
@@ -65,5 +72,6 @@ public class HotelEntity implements Serializable {
     public void setIsAvailable(int isAvailable) {
         this.isAvailable = isAvailable;
     }
-    
+
+
 }

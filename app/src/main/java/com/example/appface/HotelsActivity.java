@@ -39,6 +39,7 @@ public class HotelsActivity extends AppCompatActivity {
             hotelEntity.setHotelName(selectAll.getString(selectAll.getColumnIndex(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_NAME)));
             hotelEntity.setHotelValue(selectAll.getString(selectAll.getColumnIndex(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_PRICE)));
             hotelEntity.setHotelRoomsCount(selectAll.getInt(selectAll.getColumnIndex(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_ROOMS)));
+            hotelEntity.setHotelDescription(selectAll.getString(selectAll.getColumnIndex(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_DESC)));
             hotelEntity.setIsAvailable(selectAll.getInt(selectAll.getColumnIndex(HotelTable.HotelTableInner.COLUMN_NAME_HOTEL_AVAILABILITY)));
             hotels.add(hotelEntity);
         }
